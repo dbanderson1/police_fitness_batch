@@ -31,8 +31,6 @@
 # 0. SETUP
 # --------------------------------------------------------------------------
 
-library(psych)  # descriptive statistics
-
 # Read data — Participant_num kept as a column (not row names) so it travels
 # with the data through every join / export step.
 Data <- read.csv("mock_data.csv", stringsAsFactors = FALSE)

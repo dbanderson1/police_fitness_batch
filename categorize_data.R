@@ -55,8 +55,8 @@ parse_mmss <- function(x) {
 }
 
 # Create numeric seconds columns for plank and CV time
-Data$plank_sec <- sapply(Data$plank_mm.ss, parse_mmss)
-Data$cv_time_sec <- sapply(Data$time_total_mm.ss, parse_mmss)
+Data$plank_sec <- sapply(Data$plank_mmss, parse_mmss)
+Data$cv_time_sec <- sapply(Data$time_total_mmss, parse_mmss)
 
 # --------------------------------------------------------------------------
 # 1. BMI CATEGORIES
@@ -184,7 +184,7 @@ assign_bf_category <- function(sex, age, body_fat_pct) {
 Data$BFperc_cat <- NA
 for (n in 1:nrow(Data)) {
   Data$BFperc_cat[n] <- assign_bf_category(
-    Data$Sex[n], Data$Age[n], Data$Body_Fat_.[n]
+    Data$Sex[n], Data$Age[n], Data$Body_Fat_perc[n]
   )
 }
 
@@ -815,8 +815,8 @@ cat("Done — mock_data_graded.csv written with", nrow(Data), "rows and",
 # Print a quick frequency table for each category to verify spread
 cat("\n--- Category distributions ---\n")
 for (cat_col in c("BMI_cat", "BFperc_cat", "VO2_cat", "GS_dom_cat",
-                   "GS_nondom_cat", "BP_cat", "VJ_cat", "Plank_cat", "SR_cat",
-                   "FR_cat")) {
+                  "GS_nondom_cat", "BP_cat", "VJ_cat", "Plank_cat", "SR_cat",
+                  "FR_cat")) {
   cat(paste0("\n", cat_col, ":\n"))
   print(table(Data[[cat_col]], useNA = "ifany"))
 }

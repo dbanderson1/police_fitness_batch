@@ -385,6 +385,14 @@ for (n in 1:nrow(Data)) {
   Data$GS_nondom_cat[n] <- assign_gs_category(sex, age, nondom_lbs, FALSE)
 }
 
+# Left- and right-hand grip strength category labels.
+# Maps the dom/non-dom categories back to anatomical hands so report inline
+# text can reference "left hand" and "right hand" directly.
+#   dom_hand: 0 = Right dominant  →  right = dom,    left = non-dom
+#   dom_hand: 1 = Left dominant   →  left  = dom,    right = non-dom
+Data$left_gs_cat  <- ifelse(Data$dom_hand == 0, Data$GS_nondom_cat, Data$GS_dom_cat)
+Data$right_gs_cat <- ifelse(Data$dom_hand == 0, Data$GS_dom_cat,    Data$GS_nondom_cat)
+
 # --------------------------------------------------------------------------
 # 5. BENCH PRESS CATEGORIES  (number of repetitions completed)
 #
@@ -804,7 +812,26 @@ for (n in 1:nrow(Data)) {
 }
 
 # --------------------------------------------------------------------------
-# 10. WRITE GRADED OUTPUT
+# 10. PRE-COMPUTED RMR-DERIVED DAILY CALORIE TARGETS
+#
+# Daily calorie ranges derived from resting metabolic rate (RMR_cal_d).
+# Multipliers reflect activity-adjusted energy needs for different goals:
+#
+#   Goal              Multiplier range   Column
+#   ─────────────     ────────────────   ──────────────────
+#   Weight loss       1.1 × – 1.3 ×     rmr_loss_low / rmr_loss_high
+#   Weight maintenance 1.4 × – 1.6 ×   rmr_maint_low / rmr_maint_high
+#   Weight gain       1.7 ×             rmr_gain
+# --------------------------------------------------------------------------
+
+Data$rmr_loss_low   <- round(Data$RMR_cal_d * 1.1)
+Data$rmr_loss_high  <- round(Data$RMR_cal_d * 1.3)
+Data$rmr_maint_low  <- round(Data$RMR_cal_d * 1.4)
+Data$rmr_maint_high <- round(Data$RMR_cal_d * 1.6)
+Data$rmr_gain       <- round(Data$RMR_cal_d * 1.7)
+
+# --------------------------------------------------------------------------
+# 11. WRITE GRADED OUTPUT
 # --------------------------------------------------------------------------
 
 write.csv(Data, "mock_data_graded.csv", row.names = FALSE)
@@ -815,7 +842,8 @@ cat("Done — mock_data_graded.csv written with", nrow(Data), "rows and",
 # Print a quick frequency table for each category to verify spread
 cat("\n--- Category distributions ---\n")
 for (cat_col in c("BMI_cat", "BFperc_cat", "VO2_cat", "GS_dom_cat",
-                  "GS_nondom_cat", "BP_cat", "VJ_cat", "Plank_cat", "SR_cat",
+                  "GS_nondom_cat", "left_gs_cat", "right_gs_cat",
+                  "BP_cat", "VJ_cat", "Plank_cat", "SR_cat",
                   "FR_cat")) {
   cat(paste0("\n", cat_col, ":\n"))
   print(table(Data[[cat_col]], useNA = "ifany"))

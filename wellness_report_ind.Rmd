@@ -7,7 +7,7 @@ output:
     toc: true
   md_document:
     variant: gfm
-# this outputs the pdf's to the output folder instead of the main directory and outputs md and pdf simultaneously 
+# this outputs the pdfs to the output folder instead of the main directory and outputs md and pdf simultaneously 
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "output", output_format = "all")
   })

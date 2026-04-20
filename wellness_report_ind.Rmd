@@ -7,6 +7,7 @@ output:
     variant: gfm
   pdf_document:
     toc: true
+output_dir: output
 ---
 
 ```{r setup, include=FALSE, message=FALSE, warning=FALSE}
@@ -22,7 +23,7 @@ library(knitr)
 library(tinytex) #helper package for LaTeX. Users may need full distribution such as MiKTeX for Windows/Linux or MacTeX for macOS.
 
 # Read data in 
-df <- read.csv("mock_data_graded.csv", stringsAsFactors = FALSE)
+df <- read.csv("output/mock_data_graded.csv", stringsAsFactors = FALSE)
 
 # Modify this line to choose participant
 p <- df[df$Participant_num == "PFS_001", ][1, ] # [1, ] is included to lock to 1 row in the RARE chance there is duplicate participant IDs
@@ -58,7 +59,7 @@ percentile_rank <- function(vec, val) {
 ```
 
 ```{r, echo=FALSE, fig.align='center', out.width='200px'}
-knitr::include_graphics("logo.png")
+knitr::include_graphics("input/logo.png")
 ```
 \newpage
 

@@ -33,7 +33,7 @@
 
 # Read data — Participant_num kept as a column (not row names) so it travels
 # with the data through every join / export step.
-Data <- read.csv("mock_data.csv", stringsAsFactors = FALSE)
+Data <- read.csv("input/mock_data.csv", stringsAsFactors = FALSE)
 
 # NOTE: We intentionally do NOT call na.omit() here.
 # Some officers are missing cardiovascular data but have valid body-comp and
@@ -834,7 +834,7 @@ Data$rmr_gain       <- round(Data$RMR_cal_d * 1.7)
 # 11. WRITE GRADED OUTPUT
 # --------------------------------------------------------------------------
 
-write.csv(Data, "mock_data_graded.csv", row.names = FALSE)
+write.csv(Data, "output/mock_data_graded.csv", row.names = FALSE)
 
 cat("Done — mock_data_graded.csv written with", nrow(Data), "rows and",
     ncol(Data), "columns.\n")

@@ -94,6 +94,9 @@ is a sample what the reports look like.
 
 ### Step 1. Clone the Repository
 
+To clone this repository you can copy the following code into your R
+studio console:
+
 ``` bash
 git clone https://github.com/dbanderson1/police_fitness.git
 ```

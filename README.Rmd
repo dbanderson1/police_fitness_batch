@@ -62,6 +62,9 @@ The second script, [wellness_report_ind.Rmd](https://github.com/dbanderson1/poli
 ## Instructions on Use
 
 ### Step 1. Clone the Repository
+
+To clone this repository you can copy the following code into your R studio console:
+
 ```{bash clone, eval=FALSE}
 git clone https://github.com/dbanderson1/police_fitness.git
 ```

@@ -43,65 +43,29 @@ The raw data for your script should be placed in the /input folder. It
 should have the following file structure:
 
 ``` r
-head(read.csv("input/mock_data.csv"))
+colnames(read.csv("input/mock_data.csv"))
 ```
 
-    ##   Participant_num Sex Age height_in height_cm weight_lbs weight_kg  BMI
-    ## 1         PFS_001   0  40      65.2     165.6      147.5      66.9 24.4
-    ## 2         PFS_002   0  27      69.8     177.3      190.2      86.3 27.5
-    ## 3         PFS_003   0  38      72.0     182.9      186.3      84.5 25.3
-    ## 4         PFS_004   0  45      69.9     177.5      208.2      94.4 30.0
-    ## 5         PFS_005   0  36      68.0     172.7      179.5      81.4 27.3
-    ## 6         PFS_006   0  39      67.4     171.2      160.6      72.8 24.8
-    ##   BMD_g_cm2 BMD_perc BMC_lbs Body_Fat_perc total_mass_lbs lean_muscle_mass_perc
-    ## 1     1.188       61     6.3          13.7          148.0                  86.3
-    ## 2     0.979       72     7.4          21.6          193.1                  78.4
-    ## 3     1.600       66     6.5          18.3          188.2                  81.7
-    ## 4     1.598       76     6.2          20.9          213.1                  79.1
-    ## 5     1.394       46     8.1          18.5          179.4                  81.5
-    ## 6     1.148       76     5.9          21.1          161.2                  78.9
-    ##   lean_muscle_mass_lbs fat_mass_lbs RMR_cal_d CV_test HR_resting_seated
-    ## 1                127.7         20.3      1488       0                70
-    ## 2                151.4         41.7      1801       0                63
-    ## 3                153.8         34.4      1827       0                72
-    ## 4                168.6         44.5      1771       0                62
-    ## 5                146.2         33.2      1790       0                74
-    ## 6                127.2         34.0      1597       0                75
-    ##   time_total_mmss HR_max_test HR_85perc_max VO2_max_est dom_hand grip_max_L_lbs
-    ## 1            9:57         172         146.2       51.46        0          120.5
-    ## 2            8:15         189         160.6       41.06        0           78.1
-    ## 3            7:15         179         152.2       37.15        0           85.2
-    ## 4            8:27         183         155.5       37.32        1           62.8
-    ## 5            8:10         191         162.4       40.82        0          109.9
-    ## 6            6:09         188         159.8       29.15        1           99.7
-    ##   grip_max_R_lbs grip_max_sum_lbs vertical_jump_in bench_press_reps plank_mmss
-    ## 1          128.1            248.6             28.3               22       3:14
-    ## 2           78.6            156.7             16.7               25       1:04
-    ## 3           93.1            178.3             15.0               14       1:42
-    ## 4           72.4            135.2             10.2               14       1:12
-    ## 5          121.4            231.3             24.1               29       2:23
-    ## 6           96.1            195.8              8.4                6       0:15
-    ##   sit_reach_in functional_reach_in fms_pain_L_scap fms_pain_R_scap
-    ## 1        14.44               16.70               0               0
-    ## 2        15.60               17.68               0               0
-    ## 3        14.63               14.74               0               0
-    ## 4        18.08               14.58               0               0
-    ## 5        24.01               16.60               0               0
-    ## 6        11.71               16.94               1               0
-    ##   fms_pain_press_prone fms_pain_posterior_rock fms_modified_pushup
-    ## 1                    0                       0                   3
-    ## 2                    0                       0                   2
-    ## 3                    0                       1                   2
-    ## 4                    0                       0                   0
-    ## 5                    0                       0                   3
-    ## 6                    0                       1                   2
-    ##   fms_overhead_squat Stage
-    ## 1                  2     9
-    ## 2                  1     7
-    ## 3                  1     6
-    ## 4                  3     7
-    ## 5                  2     7
-    ## 6                  3     5
+    ##  [1] "Participant_num"         "Sex"                    
+    ##  [3] "Age"                     "height_in"              
+    ##  [5] "height_cm"               "weight_lbs"             
+    ##  [7] "weight_kg"               "BMI"                    
+    ##  [9] "BMD_g_cm2"               "BMD_perc"               
+    ## [11] "BMC_lbs"                 "Body_Fat_perc"          
+    ## [13] "total_mass_lbs"          "lean_muscle_mass_perc"  
+    ## [15] "lean_muscle_mass_lbs"    "fat_mass_lbs"           
+    ## [17] "RMR_cal_d"               "CV_test"                
+    ## [19] "HR_resting_seated"       "time_total_mmss"        
+    ## [21] "HR_max_test"             "HR_85perc_max"          
+    ## [23] "VO2_max_est"             "dom_hand"               
+    ## [25] "grip_max_L_lbs"          "grip_max_R_lbs"         
+    ## [27] "grip_max_sum_lbs"        "vertical_jump_in"       
+    ## [29] "bench_press_reps"        "plank_mmss"             
+    ## [31] "sit_reach_in"            "functional_reach_in"    
+    ## [33] "fms_pain_L_scap"         "fms_pain_R_scap"        
+    ## [35] "fms_pain_press_prone"    "fms_pain_posterior_rock"
+    ## [37] "fms_modified_pushup"     "fms_overhead_squat"     
+    ## [39] "Stage"
 
 The R script, when ran, will categorize performance for the majority of
 the variables into a file called mock_data_graded.csv which is stored in
@@ -171,8 +135,8 @@ for tinytex to work. The following distros are recommended:
 
 You should be able to delete all files in the output folder and start
 with your raw ungraded data and be able to generate reports. Change the
-following line in the Second Script, to run a report on a different
-participant.
+following code (line 32) in the Second Script, to run a report on a
+different participant.
 
 ``` bash
 # --------------------------------------------------------------------------

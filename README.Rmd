@@ -1,5 +1,5 @@
 ---
-title: "README"
+title: "Police Fitness README"
 author: "Derek Anderson"
 date: "`r Sys.Date()`"
 output:
@@ -44,7 +44,7 @@ Here you’ll find R script to categorize:
 The raw data for your script should be placed in the /input folder. It should have the following file structure:
 
 ```{r}
-head(read.csv("input/mock_data.csv"))
+colnames(read.csv("input/mock_data.csv"))
 ```
 
 The R script, when ran, will categorize performance for the majority of the variables into a file called mock_data_graded.csv which is stored in the /output folder.
@@ -97,7 +97,7 @@ However, some users may need to install a full distribution of LaTeX, for tinyte
 
 ### Step 5. Confirm functionality
 
-You should be able to delete all files in the output folder and start with your raw ungraded data and be able to generate reports. Change the following line in the Second Script, to run a report on a different participant.
+You should be able to delete all files in the output folder and start with your raw ungraded data and be able to generate reports. Change the following code (line 32) in the Second Script, to run a report on a different participant.
 ```bash
 # --------------------------------------------------------------------------
 # This is the key line to change to select which report to generate

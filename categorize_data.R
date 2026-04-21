@@ -192,38 +192,54 @@ for (n in 1:nrow(Data)) {
 # 3. VO2 MAX CATEGORIES
 #
 # Age- and sex-stratified cardiorespiratory fitness norms.
-# Threshold vector = lower bounds in ascending order:
-#   c(poor_min, fair_min, good_min, excellent_min, superior_min)
+# Threshold vector = lower bounds (ml·kg⁻¹·min⁻¹) in ascending order,
+# derived from the TOP of each percentile band:
+#   c(15th, 35th, 55th, 75th, 90th)
+#
+# Fitness categories (percentile):
+#   Superior = 95 | Excellent = 80–90 | Good = 60–75
+#   Fair = 40–55  | Poor = 20–35      | Very Poor = 5–15
 #
 # >= threshold[5] = "Superior"   … down to < threshold[1] = "Very Poor"
+#
+# Source: Powers, S. K., Howley, E. T., & Quindry, J. C. (2024).
+#   Exercise physiology: Theory and application to fitness and performance
+#   (12th ed.). McGraw Hill. (Table 17.2; data from Kaminsky et al., 2015,
+#   Mayo Clinic Proceedings, 90(11), 1515–1523.)
 # --------------------------------------------------------------------------
 
 assign_vo2_category <- function(sex, age, vo2_max) {
   if (is.na(sex) || is.na(age) || is.na(vo2_max)) return(NA)
   
-  # Determine age band
+  # Determine age band (now includes 70-79)
   age_band <- NA
   if      (age >= 20 & age <= 29) age_band <- "20-29"
   else if (age >= 30 & age <= 39) age_band <- "30-39"
   else if (age >= 40 & age <= 49) age_band <- "40-49"
   else if (age >= 50 & age <= 59) age_band <- "50-59"
   else if (age >= 60 & age <= 69) age_band <- "60-69"
+  else if (age >= 70 & age <= 79) age_band <- "70-79"
   
   if (is.na(age_band)) return(NA)
   
-  # --- Male thresholds ---
+  # --- Male thresholds (15th, 35th, 55th, 75th, 90th percentile) ---
   male_thresholds <- list(
-    `20-29` = c(35.5, 43.4, 49.1, 55.2, 61.9),
-    `30-39` = c(32.8, 38.6, 43.9, 49.3, 56.6),
-    `40-49` = c(29.1, 34.7, 39.0, 45.1, 52.2),
-    `50-59` = c(24.3, 29.6, 33.9, 39.8, 45.7),
-    `60-69` = c(21.3, 25.8, 29.2, 34.6, 40.4)
+    `20-29` = c(35.4, 43.5, 49.0, 55.2, 61.8),
+    `30-39` = c(32.7, 38.5, 43.8, 49.2, 56.5),
+    `40-49` = c(29.0, 34.6, 38.9, 45.0, 52.1),
+    `50-59` = c(24.4, 29.5, 33.8, 39.7, 45.6),
+    `60-69` = c(21.2, 25.7, 29.1, 34.5, 40.3),
+    `70-79` = c(18.2, 22.4, 25.6, 30.4, 36.6)
   )
   
-  # --- Female thresholds ---
+  # --- Female thresholds (15th, 35th, 55th, 75th, 90th percentile) ---
   female_thresholds <- list(
-    `20-29` = c(26.3, 33.7, 39.0, 44.8, 51.4),
-    `30-39` = c(22.6, 27.5, 31.3, 36.2, 41.5)
+    `20-29` = c(26.2, 33.6, 38.9, 44.7, 51.3),
+    `30-39` = c(22.5, 27.4, 31.2, 36.1, 41.4),
+    `40-49` = c(20.0, 24.1, 27.7, 32.4, 38.4),
+    `50-59` = c(18.3, 21.2, 24.4, 27.6, 32.0),
+    `60-69` = c(15.6, 18.4, 20.5, 23.8, 27.0),
+    `70-79` = c(14.6, 16.8, 19.2, 20.8, 23.1)
   )
   
   # Select correct threshold table by sex
@@ -241,8 +257,7 @@ assign_vo2_category <- function(sex, age, vo2_max) {
   else if (vo2_max >= thresholds[3]) return("Good")
   else if (vo2_max >= thresholds[2]) return("Fair")
   else if (vo2_max >= thresholds[1]) return("Poor")
-  
-  return("Very Poor")
+  else                               return("Very Poor")
 }
 
 Data$VO2_cat <- NA

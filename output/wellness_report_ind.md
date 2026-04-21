@@ -150,7 +150,7 @@ and/or stability. Your screens indicated:
 - **Spinal Extension - Prone Press Up Test:** No Pain
 - **Spinal Flexion - Posterior Rock Test:** No Pain
 
-# Comparison To the Force
+# Comparison to the Force
 
 The above tables represent how well you compare to individuals of
 similar age and or sex. The comparisons in this section will show how

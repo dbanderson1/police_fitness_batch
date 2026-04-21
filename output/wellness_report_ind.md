@@ -37,7 +37,7 @@ information that could be used to identify individual participants.
 | Height (in) | 65.2 | Body Fat (% of Body Weight) | 13.7 | Bone Density (g/cm2) | 1.188 |
 | Weight (lbs) | 148 | Body Fat % Category | Excellent | Bone Density (Age and Sex %ile) | 61 |
 | BMI | 24.4 | Fat Mass (lbs) | 20.3 | Bone Mineral Content (lbs) | 6.3 |
-| BMI Category | Normal | Lean Muscle Mass (lbs) | 127.7 | Resting Metabolic Rate (cal/day) | 1488 |
+| BMI Category | Normal | Lean Muscle Mass (lbs) | 127.7 | Resting Metabolic Rate (cal/day) | 1774.3 |
 |  |  | Lean Muscle Mass (% of Body Weight) | 86.3 |  |  |
 
 **Body Composition Summary Table**
@@ -53,14 +53,15 @@ category. Your bone mineral density percentile places you at the
 **61%ile** of people your age (note: this number is not the percentage
 of your total body mass that is bone mineral content).
 
-Your resting metabolic rate is **1488** calories per day. Note that this
-amount is only enough to support your baseline physiological needs and
-does not account for the energy required to perform physical activity.
-If you are trying to **lose weight**, you may need approximately
-**1637** to **1934** calories per day. If you are trying to **maintain
-your weight**, you may need approximately **2083** to **2381** calories
-per day. If you are trying to **gain weight or are extremely physically
-active**, you may need **2530** calories per day or more.
+Your resting metabolic rate is **1774.3** calories per day. Note that
+this amount is only enough to support your baseline physiological needs
+and does not account for the energy required to perform physical
+activity. If you are trying to **lose weight**, you may need
+approximately **1952** to **2307** calories per day. If you are trying
+to **maintain your weight**, you may need approximately **2484** to
+**2839** calories per day. If you are trying to **gain weight or are
+extremely physically active**, you may need **3016** calories per day or
+more.
 
 # Physical Performance
 

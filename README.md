@@ -126,7 +126,7 @@ library(tinytex)
 ```
 
 However, some users may need to install a full distribution of LaTeX,
-for tinytex to work. The following distros are recommended:
+for tinytex to work. The following distributions are recommended:
 
 1.  [MiKTeX](https://miktex.org/) for Windows/Linux
 2.  [MacTeX](https://www.tug.org/mactex/) for macOS.
@@ -134,9 +134,9 @@ for tinytex to work. The following distros are recommended:
 ### Step 5. Confirm functionality
 
 You should be able to delete all files in the output folder and start
-with your raw ungraded data and be able to generate reports. Change the
-following code (line 32) in the Second Script, to run a report on a
-different participant.
+with your raw ungraded data and be able to generate reports. After
+deleting, run the first script. Change the code (line 32) in the second
+script to run a report on a different participant.
 
 ``` bash
 # --------------------------------------------------------------------------

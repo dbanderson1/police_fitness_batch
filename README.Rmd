@@ -85,25 +85,28 @@ Run [catagorize_data.R](https://github.com/dbanderson1/police_fitness/blob/main/
 [wellness_report_ind.Rmd](https://github.com/dbanderson1/police_fitness/blob/main/wellness_report_ind.Rmd)
 
 Note: This script requires only three R packages:
+
 ```bash
 library(tidyverse)
 library(knitr)
 library(tinytex)
 ```
-However, some users may need to install a full distribution of LaTeX, for tinytex to work. The following distros are recommended:
+However, some users may need to install a full distribution of LaTeX, for tinytex to work. The following distributions are recommended:
 
 1. [MiKTeX](https://miktex.org/) for Windows/Linux
 2. [MacTeX](https://www.tug.org/mactex/) for macOS.
 
 ### Step 5. Confirm functionality
 
-You should be able to delete all files in the output folder and start with your raw ungraded data and be able to generate reports. Change the following code (line 32) in the Second Script, to run a report on a different participant.
+You should be able to delete all files in the output folder and start with your raw ungraded data and be able to generate reports. After deleting, run the first script. Change the code (line 32) in the second script to run a report on a different participant.
+
 ```bash
 # --------------------------------------------------------------------------
 # This is the key line to change to select which report to generate
 # --------------------------------------------------------------------------
 p <- df[df$Participant_num == "PFS_001", ][1, ]
 ```
+
 ## File Tree
 
 File tree generated using r code and fs():

@@ -110,7 +110,7 @@ package dependencies.
 renv::restore()
 ```
 
-### Step 3. Place the files
+### Step 3. Place the Files
 
 You only need two files to generate these reports:
 
@@ -147,7 +147,7 @@ for tinytex to work. The following distributions are recommended:
 1.  [MiKTeX](https://miktex.org/) for Windows/Linux
 2.  [MacTeX](https://www.tug.org/mactex/) for macOS.
 
-### Step 6. Confirm functionality
+### Step 6. Confirm Functionality
 
 You should be able to delete all files in the output folder and start
 with your raw ungraded data and be able to generate reports. After

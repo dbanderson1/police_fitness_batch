@@ -39,7 +39,7 @@ Here you’ll find R script to categorize:
 - Forward Lean Balance Test
 - Functional Movement Screen (FMS)
 
-The raw data for your script should be placed in the /input folder. I
+The raw data for your script should be placed in the /input folder. It
 should have the following file structure:
 
 ``` r
@@ -149,7 +149,7 @@ Both of those items should be located in the /input folder.
 Run
 [catagorize_data.R](https://github.com/dbanderson1/police_fitness/blob/main/categorize_data.R)
 
-### Step 4 Run the Second Script
+### Step 4. Run the Second Script
 
 [wellness_report_ind.Rmd](https://github.com/dbanderson1/police_fitness/blob/main/wellness_report_ind.Rmd)
 
@@ -167,7 +167,7 @@ for tinytex to work. The following distros are recommended:
 1.  [MiKTeX](https://miktex.org/) for Windows/Linux
 2.  [MacTeX](https://www.tug.org/mactex/) for macOS.
 
-### Confirm functionality
+### Step 5. Confirm functionality
 
 You should be able to delete all files in the output folder and start
 with your raw ungraded data and be able to generate reports. Change the
@@ -199,7 +199,7 @@ fs::dir_tree()
 │   ├── mock_data_graded.csv # this is your final graded data
 │   ├── wellness_report_ind.md # MD version of the reports
 │   ├── wellness_report_ind.pdf # PDF version of the reports
-│   └── wellness_report_ind_files # thi is auto generated and contains the histograms you created
+│   └── wellness_report_ind_files # this is auto generated and contains the histograms you created
 │       └── figure-gfm
 │           ├── comparison-plots-1.png
 │           ├── comparison-plots-2.png

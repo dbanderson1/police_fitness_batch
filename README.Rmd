@@ -149,6 +149,8 @@ fs::dir_tree()
 ├── police_fitness.Rproj
 ├── README.md        # Top Level README
 ├── README.Rmd
+├── renv  # redirects R to use project library instead of gloabl 
+├── renv.lock  # JSON file that records package names, exact versions, and sources
 └── wellness_report_ind.Rmd # Script Two - Generates Wellness Reports
 ```
 

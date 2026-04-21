@@ -120,9 +120,9 @@ Run
 Note: This script requires only three R packages:
 
 ``` bash
-library(tidyverse)
-library(knitr)
-library(tinytex)
+library(tidyverse) # pulls in ~10+ core packages (dplyr, ggplot2, readr, etc.)
+library(knitr) # ties everything together in rendering 
+library(tinytex) # helper package that interacts with your LaTeX distribution
 ```
 
 However, some users may need to install a full distribution of LaTeX,
@@ -190,8 +190,15 @@ This project is the baseline foundation for several additional projects.
 3.  Using snippets of this script to develop similar wellness reports
     for US Army personnel
 
-## Disclaimer:
+## Disclaimer
 
 All data contained in this repository are simulated (mock) data and do
 not represent real individuals or operational police data. These data
 are provided for illustrative and educational purposes only.
+
+## About
+
+This project was developed using RStudio (version 2026.01.1, Build 403)
+and R (version 4.5.2). Package dependencies are managed with renv to
+support reproducibility and ensure consistent functionality across
+environments and future analyses.

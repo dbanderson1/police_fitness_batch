@@ -12,7 +12,7 @@ library(knitr)
 library(fs)
 ```
 
-# README
+# Police Fitness README
 
 ## Introduction
 
@@ -80,11 +80,11 @@ Both of those items should be located in the /input folder.
 
 ### Step 3. Run the First Script
 
-Run [catagorize_data.R](https://github.com/dbanderson1/police_fitness/blob/main/categorize_data.R)
+[catagorize_data.R](https://github.com/dbanderson1/police_fitness/blob/main/categorize_data.R)
 
 ### Step 4. Run the Second Script
 
-[wellness_report_ind.Rmd](https://github.com/dbanderson1/police_fitness/blob/main/wellness_report_ind.Rmd)
+Use the second script, [wellness_report_ind.Rmd](https://github.com/dbanderson1/police_fitness/blob/main/wellness_report_ind.Rmd), by clicking knit.
 
 Note: This script requires only three R packages:
 

@@ -101,7 +101,16 @@ studio console:
 git clone https://github.com/dbanderson1/police_fitness.git
 ```
 
-### Step 2. Place the files
+### Step 2. Recreate the Environment
+
+This creates reproducible, isolated project environment to manage
+package dependencies.
+
+``` r
+renv::restore()
+```
+
+### Step 3. Place the files
 
 You only need two files to generate these reports:
 
@@ -111,15 +120,18 @@ You only need two files to generate these reports:
 
 Both of those items should be located in the /input folder.
 
-### Step 3. Run the First Script
+### Step 4. Run the First Script
 
+Run
 [catagorize_data.R](https://github.com/dbanderson1/police_fitness/blob/main/categorize_data.R)
+to generate categorical classifications of your raw data.
 
-### Step 4. Run the Second Script
+### Step 5. Run the Second Script
 
 Use the second script,
 [wellness_report_ind.Rmd](https://github.com/dbanderson1/police_fitness/blob/main/wellness_report_ind.Rmd),
-by clicking knit.
+by clicking knit. This will generate both a PDF and MD report for your
+participant.
 
 Note: This script requires only three R packages:
 
@@ -135,7 +147,7 @@ for tinytex to work. The following distributions are recommended:
 1.  [MiKTeX](https://miktex.org/) for Windows/Linux
 2.  [MacTeX](https://www.tug.org/mactex/) for macOS.
 
-### Step 5. Confirm functionality
+### Step 6. Confirm functionality
 
 You should be able to delete all files in the output folder and start
 with your raw ungraded data and be able to generate reports. After
